@@ -1,0 +1,69 @@
+[tool.poetry]
+name = "neural-network-from-scratch"
+version = "0.1.0"
+description = ""
+authors = ["it_doesnt_matter <<>>"]
+readme = "README.md"
+packages = [{include = "neural_network_from_scratch"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.24.2"
+rich = "^13.3.1"
+matplotlib = "^3.7.1"
+tqdm = "^4.65.0"
+scikit-learn = "^1.2.2"
+ruff = "^0.0.255"
+isort = "^5.12.0"
+black = "^23.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+line-length = 99
+
+select = ["ALL"]
+ignore = ["ANN101", "ANN102", "D"]
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+# Assume Python 3.10.
+target-version = "py310"
+
+[tool.ruff.mccabe]
+# Unlike Flake8, default to a complexity level of 10.
+max-complexity = 10
+
+[tool.isort]
+line_length = 99
+profile = "black"
+
+[tool.black]
+line-length = 99
